@@ -46,7 +46,8 @@ class HomeController extends Controller
         $user = \Auth::user();
         $users =  \App\User::all();
         $posts =  \App\Post::all();
-        return view('home.profile', compact("user","posts","users"));
+        $counts = $this->counts($user);
+        return view('home.profile', compact("user","posts","users","counts"));
     }
     function activity()
     {

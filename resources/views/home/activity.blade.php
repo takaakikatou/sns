@@ -9,7 +9,11 @@
           <div class="alluser">
             @foreach ($users as $user)
             <div class="activity-content">
+                @if (empty(Auth::user()->profile_image))
+                <img class="profile_myimage" src="{{ asset('image/アイコン.png') }}" width="60px" height="60px">
+                @else
                 <img class="profile_image" src="../../uploads/{{ $user->profile_image}}" width="50px" height="50px">
+                @endif
                 <p class="activity-name">{{ $user->name }} <br> があなたをフォローし始めました。</p>
             </div>
             @endforeach
@@ -22,7 +26,11 @@
           <div class="alluser">
             @foreach ($alluser as $user)
             <div class="activity-content">
+                @if (empty(Auth::user()->profile_image))
+                <img class="profile_myimage" src="{{ asset('image/アイコン.png') }}" width="50px" height="50px">
+                @else
                 <img class="profile_image" src="../../uploads/{{ $user->profile_image}}" width="50px" height="50px">
+                @endif
                 <div class="activity-name">
                   <a class="profile-input" href="/home/user_profile/{{ $user->id }}">{{ $user->name }}</a>
                   @include('follow.follow_button',['user'=>$user])

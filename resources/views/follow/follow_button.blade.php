@@ -5,7 +5,7 @@
         @if (Auth::user()->is_following($user->id))
         
             {!! Form::open(['route' => ['unfollow', $user->id], 'method' => 'delete']) !!}
-                {!! Form::submit('followed', ['class' => "btn-border button btn btn-danger mt-1"]) !!}
+                {!! Form::submit('followed', ['class' => "btn-border btn-click button btn btn-danger mt-1"]) !!}
             {!! Form::close() !!}
             
         @else

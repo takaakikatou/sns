@@ -153,6 +153,10 @@ h5{
 }
 .btn-link{
   color: rgb(255, 255, 255);
+  justify-content: space-between;
+}
+.padding-left{
+  padding-left: 3rem;
 }
 .scrolltxt{
   position: absolute;
@@ -259,7 +263,7 @@ li{
 .screen{
   position: relative;
   top: 45vh;
-  right: -4.5%;
+  right: -6%;
   width: 42%;
   background: rgba(31, 31, 31, 0.63);
   padding: 0 25px;
@@ -318,6 +322,7 @@ li{
   border-left: 2px solid rgb(255, 255, 255);
   padding-left: 25px;
   margin-bottom: 2rem;
+  color: rgb(255, 255, 255);
 }
 .profile_myimage{
   border: solid 1px rgb(0, 0, 0);
@@ -569,7 +574,14 @@ li{
 }
 .btn-border:hover {
   color: #fff;
-  background: rgb(216, 0, 0);
+  background: rgb(240, 173, 173);
+}
+.btn-click{
+  color: #fff;
+  background: rgb(240, 173, 173);
+}
+.followers{
+  display: flex;
 }
 .changed{
   display: none;
