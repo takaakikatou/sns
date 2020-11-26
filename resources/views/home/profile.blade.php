@@ -13,7 +13,7 @@
         <div class="profile-text">
           <p class="profile-myname">{{ $user->name }}</p>
           <div class="followers">
-            <li class=" {{ Request::is('users/*/followers') ? 'active' : '' }}"><a href="{{ route('followers',['id'=>$user->id]) }}" class="profile-mymessage">follower　　{{ $counts["followers"] }}</a></li>
+            <li class=" {{ Request::is('users/*/followers') ? 'active' : '' }}"><a href="{{ route('followers',['id'=>$user->id]) }}" class="profile-mymessage btn-link">follower　　{{ $counts["followers"] }}</a></li>
             <li class=" {{ Request::is('users/*/followings') ? 'active' : '' }}"><a href="{{ route('followings',['id'=>$user->id]) }}" class="btn-link padding-left">follow　{{ $counts["followings"] }}</a></li>
           </div>
           <p class="profile-mymessage">{{ $user->profile }}</p>
