@@ -55,7 +55,11 @@
                                                 <h6 class="card-title">{{ $post->title }}</h6>
                                                 <p class="card-text">{{ $post->body }}</p>
                                             </div>
+                                            @if (empty(asset('uploads/'. $post->post_image)))
+                                            <img class="post_image" src="{{ asset('image/unimage.png') }}" width="200px" height="200px">           
+                                            @else
                                             <img class="post_image" src="{{ asset('uploads/'. $post->post_image)}}" width="200px" height="200px">
+                                            @endif
                                             <div class="card-footer text-muted">
                                                 {{ $post->created_at }}
                                             </div>
