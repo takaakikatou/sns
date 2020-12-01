@@ -14,7 +14,7 @@
                     </ul>
                 </div>
             @endif
-                <form class="create" action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="create" action="/upload" method="post" enctype="multipart/form-data">
                    <div class="create-position">
                         {{csrf_field()}}
                         <div class="cp_iptxt cp_iptxts">

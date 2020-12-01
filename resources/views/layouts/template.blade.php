@@ -87,7 +87,7 @@
                                 @if (empty(Auth::user()->profile_image))
                                     <img class="profile_myimage" src="{{ asset('image/アイコン.png') }}" width="60px" height="60px">
                                 @else
-                                    <img class="profile_myimage" src="../../uploads/{{ Auth::user()->profile_image}}" width="60px" height="60px">
+                                <img src="{{$path}}">
                                 @endif
                                
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="">
