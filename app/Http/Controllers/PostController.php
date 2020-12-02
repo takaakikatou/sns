@@ -69,7 +69,7 @@ class PostController extends Controller
         $post -> user_id  = Auth::id();
         $post -> save(); 
         $file = $request->file('file');
-        $path = Storage::disk('s3')->putFile('/', $file, 'public');
+        $path = Storage::disk('s3')->putFile('use Storage;','/', $file, 'public');
         return redirect()->route('posts.index');
     }
     public function upload(Request $request)

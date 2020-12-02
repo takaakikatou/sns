@@ -57,10 +57,10 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => 'AKIAWQKDNFFBHRG3I4NX',
-            'secret' => '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',
-            'region' => 'ap-northeast-1',
-            'bucket' => 'mass-sns.kato',
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_DEFAULT_REGION'),
+            'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
