@@ -71,7 +71,8 @@ class HomeController extends Controller
     }
     function update(Request $request, $id)
     {
-
+        $user = \App\User::find($id);
+        
         if ($file = $request->file('profile_image')) {
             $path = Storage::disk('s3')->putFile('/', $file, 'public');
             $user->profile_image = Storage::disk('s3')->url($path);
@@ -79,7 +80,6 @@ class HomeController extends Controller
             $user->profile_image = "";
         }
 
-       $user = \App\User::find($id);
        $user->name = $request->name;
        $user->profile = $request->profile;
        $user->save();
