@@ -69,18 +69,17 @@ class HomeController extends Controller
     }
     function update(Request $request, $id)
     {
-        if ($file = $request->profile_image) {
-            $fileName = time() . $file->getClientOriginalName();
-            $target_path = public_path('uploads/');
-            $file->move($target_path, $fileName);
+
+        if ($file = $request->file('profile_image')) {
+            $path = Storage::disk('s3')->putFile('/', $file, 'public');
+            $user->profile_image = Storage::disk('s3')->url($path);
         } else {
-            $fileName = "";
+            $user->profile_image = "";
         }
-    
+
        $user = \App\User::find($id);
        $user->name = $request->name;
        $user->profile = $request->profile;
-       $user->profile_image = $fileName;
        $user->save();
        return redirect("/home/profile");
     }
