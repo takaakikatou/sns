@@ -10,6 +10,8 @@ use App\Post;
 
 use Auth;
 
+use Illuminate\Support\Facades\Storage;
+
 class PostController extends Controller
 {
     public function __construct()
@@ -50,7 +52,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    use Storage;public function store(PostRequest $request)
+    public function store(PostRequest $request)
     {
 
         $post = new Post; 
