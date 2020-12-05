@@ -29,7 +29,7 @@
                 @if (empty(Auth::user()->profile_image))
                 <img class="profile_myimage" src="{{ asset('image/アイコン.png') }}" width="50px" height="50px">
                 @else
-                <img class="profile_image" src="../../uploads/{{ $user->profile_image}}" width="50px" height="50px">
+                <img class="profile_image" src="{{$user->profile_image}}" width="50px" height="50px">
                 @endif
                 <div class="activity-name">
                   <a class="profile-input" href="/home/user_profile/{{ $user->id }}">{{ $user->name }}</a>
