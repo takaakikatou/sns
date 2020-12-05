@@ -10,7 +10,7 @@
             @foreach ($users as $user)
             <div class="activity-content">
                 @if (empty(Auth::user()->profile_image))
-                <img class="profile_myimage" src="{{ asset('image/アイコン.png') }}" width="60px" height="60px">
+                <img class="profile_myimage" src="{{ asset('public/image/アイコン.png') }}" width="60px" height="60px">
                 @else
                 <img class="profile_image" src="../../uploads/{{ $user->profile_image}}" width="50px" height="50px">
                 @endif
