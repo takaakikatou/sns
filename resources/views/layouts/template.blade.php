@@ -50,7 +50,7 @@
                                             tweet
                                         </div>
                                         <div class="card-body-wrap">
-                                            @foreach ($posts as $post)
+                                            @foreach ( array_reverse($posts) as $post )
                                             <div class="card-body">
                                                 <h6 class="card-title">{{ $post->title }}</h6>
                                                 <p class="card-text">{{ $post->body }}</p>
